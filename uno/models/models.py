@@ -1,18 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
-
-# class ./uno(models.Model):
-#     _name = './uno../uno'
-#     _description = './uno../uno'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+class Uno(models.Model):
+    _name = 'uno.uno'
+    _description = 'Dummy model'
