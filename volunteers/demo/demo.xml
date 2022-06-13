@@ -2,18 +2,18 @@
   <data noupdate='1'>
     <record model="volunteers.task" id="task_01">
       <field name="name">Clean Dishes</field>
-      <field name="start_time">2022/01/01 06:00</field>
-      <field name="stop_time">2022/01/01 08:00</field>
+      <field name="start_time">2022-01-01 06:00</field>
+      <field name="stop_time">2022-01-01 08:00</field>
     </record>
     <record model="volunteers.task" id="task_02">
       <field name="name">Resupply Groceries</field>
-      <field name="start_time">2022/01/01 12:00</field>
-      <field name="stop_time">2022/01/01 16:00</field>
+      <field name="start_time">2022-01-01 12:00</field>
+      <field name="stop_time">2022-01-01 16:00</field>
     </record>
     <record model="volunteers.task" id="task_03">
       <field name="name">Pick up Trash</field>
-      <field name="start_time">2022/01/01 18:00</field>
-      <field name="stop_time">2022/01/01 22:00</field>
+      <field name="start_time">2022-01-01 18:00</field>
+      <field name="stop_time">2022-01-01 22:00</field>
     </record>
   </data>
 </odoo>
