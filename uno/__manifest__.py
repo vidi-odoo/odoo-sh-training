@@ -18,6 +18,7 @@
     # for the full list
     'category': 'Training',
     'version': '0.1',
+    'license': 'MIT',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
