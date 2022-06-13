@@ -5,3 +5,6 @@ from odoo import models, fields, api
 class Spaceship(models.Model):
     _name = 'spacecrew.spaceship'
     _description = 'Spaceship'
+
+    active = fields.Boolean(string='Active', default=True)
+    manufacturer = fields.Char()
