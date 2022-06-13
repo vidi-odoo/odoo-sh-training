@@ -1,14 +1,14 @@
 <odoo>
   <data noupdate='1'>
-    <record model="spacecrew.spacecrew" id="ship_01">
+    <record model="spacecrew.spaceship" id="ship_01">
       <field name="name">Apollo 1</field>
       <field name="manufacturer">NASA</field>
     </record>
-    <record model="spacecrew.spacecrew" id="ship_02">
+    <record model="spacecrew.spaceship" id="ship_02">
       <field name="name">Apollo 2</field>
       <field name="manufacturer">NASA</field>
     </record>
-    <record model="spacecrew.spacecrew" id="ship_03">
+    <record model="spacecrew.spaceship" id="ship_03">
       <field name="name">Hikari</field>
       <field name="manufacturer">JASCO</field>
     </record>
