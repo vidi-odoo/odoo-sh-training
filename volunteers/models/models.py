@@ -13,10 +13,10 @@ class Task(models.Model):
     start_time = fields.Datetime('Start time')
     stop_time = fields.Datetime('Stop time')
     times_repeated = fields.Integer('Times repeated')
-    frequency = fields.Selection('Frequency', selection=[
+    frequency = fields.Selection([
         ('hour', 'Hour'),
         ('day', 'Day'),
         ('week', 'Week'),
         ('month', 'Month'),
         ('year', 'Year')
-    ])
+    ], 'Frequency')
