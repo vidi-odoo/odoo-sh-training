@@ -1,60 +1,68 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="spacecrew.list">
-      <field name="name">spacecrew list</field>
-      <field name="model">spacecrew.spacecrew</field>
+    <record model="ir.actions.act_window" id="actions_spaceships">
+      <field name="name">Spaceships</field>
+      <field name="res_model">spacecrew.spaceship</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Add a spaceship
+        </p>
+      </field>
+    </record>
+
+    <menuitem name="Spacecrew" id="menu_spacecrew" sequence='1' />
+    <menuitem name='Spacecrew' id='menu_spacecrew_sub' parent='menu_spacecrew' sequence='2' />
+    <menuitem name='Spaceships'
+      id='menu_spacecrew_spaceships'
+      parent='menu_spacecrew_sub'
+      sequence='3'
+      action='actions_spaceships' />
+
+    <record id="spacecrew.spaceship_view_form" model="ir.ui.view">
+      <field name="name">spacecrew.spaceship.view.form</field>
+      <field name="model">spacecrew.spaceship</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+        <form string="Spaceship_Details">
+          <sheet>
+            <h1>
+              <field name="name" />
+            </h1>
+            <group>
+              <group>
+                <field name="active" />
+              </group>
+              <notebook>
+                <page string="Manufacturer">
+                  <field name="manufacturer" />
+                </page>
+              </notebook>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="spacecrew.spaceship_view_tree" model="ir.ui.view">
+      <field name="name">spacecrew.spaceship.view.tree</field>
+      <field name="model">spacecrew.spaceship</field>
+      <field name="arch" type="xml">
+        <tree string="Spaceships">
+          <field name="name" />
+          <field name="manufacturer" />
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="spacecrew.action_window">
-      <field name="name">spacecrew window</field>
-      <field name="res_model">spacecrew.spacecrew</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="spacecrew.action_server">
-      <field name="name">spacecrew server</field>
-      <field name="model_id" ref="model_spacecrew_spacecrew"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+    <record id="spacecrew.spaceship_view_search" model="ir.ui.view">
+      <field name="name">spacecrew.spaceship.view.search</field>
+      <field name="model">spacecrew.spaceship</field>
+      <field name="arch" type="xml">
+        <search string="Search Spaceships">
+          <field name="name" />
+          <field name="manufacturer" />
+        </search>
       </field>
     </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="spacecrew" id="spacecrew.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="spacecrew.menu_1" parent="spacecrew.menu_root"/>
-    <menuitem name="Menu 2" id="spacecrew.menu_2" parent="spacecrew.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="spacecrew.menu_1_list" parent="spacecrew.menu_1"
-              action="spacecrew.action_window"/>
-    <menuitem name="Server to list" id="spacecrew" parent="spacecrew.menu_2"
-              action="spacecrew.action_server"/>
--->
   </data>
 </odoo>

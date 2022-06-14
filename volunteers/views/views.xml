@@ -1,7 +1,87 @@
 <odoo>
   <data>
+    <record model="ir.actions.act_window" id="actions_volunteer_tasks">
+      <field name="name">Tasks</field>
+      <field name="res_model">volunteers.task</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Add a task
+        </p>
+      </field>
+    </record>
+
+    <menuitem name='Volunteers' id='menu_volunteers' sequence='1' />
+    <menuitem name='Volunteers' id='menu_volunteers_sub' parent='menu_volunteers' sequence='2' />
+    <menuitem name='Tasks'
+      id='menu_volunteers_tasks'
+      parent='menu_volunteers_sub'
+      sequence='3'
+      action='actions_volunteer_tasks' />
+
+    <record id="volunteers.task_view_form" model="ir.ui.view">
+      <field name="name">volunteers.task.view.form</field>
+      <field name="model">volunteers.task</field>
+      <field name="arch" type="xml">
+        <form string="Task">
+          <sheet>
+            <h1>
+              <field name="name" />
+            </h1>
+            <notebook>
+              <page string="Info">
+                <group>
+                  <field name="start_time" />
+                </group>
+                <group>
+                  <field name="stop_time" />
+                </group>
+                <group>
+                  <field name="times_repeated" />
+                </group>
+                <group>
+                  <field name="frequency" />
+                </group>
+                <group>
+                  <field name="description" />
+                </group>
+              </page>
+            </notebook>
+            <group></group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="volunteers.task_view_search" model="ir.ui.view">
+      <field name="name">volunteers.task.view.search</field>
+      <field name="model">volunteers.task</field>
+      <field name="arch" type="xml">
+        <search string="Search tasks">
+          <field name="name" />
+          <field name="start_time" />
+          <field name="stop_time" />
+          <field name="times_repeated" />
+          <field name="frequency" />
+        </search>
+      </field>
+    </record>
+
+    <record id="volunteers.task_view_tree" model="ir.ui.view">
+      <field name="name">volunteers.task.view.tree</field>
+      <field name="model">volunteers.task</field>
+      <field name="arch" type="xml">
+        <tree string="Task">
+          <field name="name" />
+          <field name="start_time" />
+          <field name="stop_time" />
+          <field name="times_repeated" />
+          <field name="frequency" />
+        </tree>
+      </field>
+    </record>
     <!-- explicit list view definition -->
-<!--
+    <!--
     <record model="ir.ui.view" id="volunteers.list">
       <field name="name">volunteers list</field>
       <field name="model">volunteers.volunteers</field>
@@ -16,7 +96,7 @@
 -->
 
     <!-- actions opening views on models -->
-<!--
+    <!--
     <record model="ir.actions.act_window" id="volunteers.action_window">
       <field name="name">volunteers window</field>
       <field name="res_model">volunteers.volunteers</field>
@@ -25,7 +105,7 @@
 -->
 
     <!-- server action to the one above -->
-<!--
+    <!--
     <record model="ir.actions.server" id="volunteers.action_server">
       <field name="name">volunteers server</field>
       <field name="model_id" ref="model_volunteers_volunteers"/>
@@ -41,16 +121,16 @@
 -->
 
     <!-- Top menu item -->
-<!--
+    <!--
     <menuitem name="volunteers" id="volunteers.menu_root"/>
 -->
     <!-- menu categories -->
-<!--
+    <!--
     <menuitem name="Menu 1" id="volunteers.menu_1" parent="volunteers.menu_root"/>
     <menuitem name="Menu 2" id="volunteers.menu_2" parent="volunteers.menu_root"/>
 -->
     <!-- actions -->
-<!--
+    <!--
     <menuitem name="List" id="volunteers.menu_1_list" parent="volunteers.menu_1"
               action="volunteers.action_window"/>
     <menuitem name="Server to list" id="volunteers" parent="volunteers.menu_2"
