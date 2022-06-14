@@ -1,0 +1,8 @@
+<odoo>
+    <record model="res.groups" id="groups_head_volunteer">
+        <field name="name">Head Volunteers</field>
+    </record>
+    <record model="res.groups" id="groups_volunteer">
+        <field name="name">Volunteers</field>
+    </record>
+</odoo>

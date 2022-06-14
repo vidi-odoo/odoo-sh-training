@@ -1,0 +1,5 @@
+<odoo>
+    <record model="res.groups" id="group_uno_admin">
+        <field name="name">Uno Admin</field>
+    </record>
+</odoo>

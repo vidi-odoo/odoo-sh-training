@@ -18,7 +18,7 @@
     # for the full list
     'category': 'Training',
     'version': '0.1',
-    'license': 'MIT',
+    'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -28,6 +28,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'security/uno_security.xml',
+        'security/ir.model.access.csv'
     ],
     # only loaded in demonstration mode
     'demo': [

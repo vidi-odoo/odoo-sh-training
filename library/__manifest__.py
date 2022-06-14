@@ -18,14 +18,15 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
-    'license': 'MIT',
+    'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/library_security.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],

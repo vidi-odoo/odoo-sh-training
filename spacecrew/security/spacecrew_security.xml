@@ -1,0 +1,8 @@
+<odoo>
+    <record model="res.groups" id="groups_spacecrew_admin">
+        <field name="name">Spacecrew Admins</field>
+    </record>
+    <record model="res.groups" id="groups_spacecrew_members">
+        <field name="name">Spacecrew Members</field>
+    </record>
+</odoo>
