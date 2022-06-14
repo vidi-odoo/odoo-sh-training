@@ -20,6 +20,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
     'application': True,
+    'installable': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -29,8 +30,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'security/spacecrew_securit.xml',
-        'security/ir.model.access.cs'
+        'security/spacecrew_security.xml',
+        'security/ir.model.access.csv'
     ],
     # only loaded in demonstration mode
     'demo': [
