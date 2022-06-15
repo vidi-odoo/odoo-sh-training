@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="library.rental_view_form" model="ir.ui.view">
+            <field name="name">library.rental.view.form</field>
+            <field name="model">library.rental</field>
+            <field name="arch" type="xml">
+                <form string="Rental Form">
+                    <sheet>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                        <notebook>
+                            <page string="Info">
+                                <group>
+                                    <field name="customer_id" />
+                                </group>
+                            </page>
+                            <page string="Rentals">
+                                <field name="book_ids" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="library.rental_view_tree" model="ir.ui.view">
+            <field name="name">library.rental.view.tree</field>
+            <field name="model">library.rental</field>
+            <field name="arch" type="xml">
+                <tree string="Rentals">
+                    <field name="name" />
+                    <field name="book_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="library.rental_view_search" model="ir.ui.view">
+            <field name="name">library.rental.view.search</field>
+            <field name="model">library.rental</field>
+            <field name="arch" type="xml">
+                <search string="Search rentals">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

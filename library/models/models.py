@@ -17,10 +17,19 @@ class Book(models.Model):
     isbn = fields.Char('ISBN')
     notes = fields.Text('Notes')
     genre = fields.Char('Genre')
+    rental_id = fields.Many2one('library.rental', 'Rental')
 
     @api.onchange('isbn')
     def _onchange_isbn(self):
-        if len(self.isbn) != 13:
+        if self.isbn and len(self.isbn) != 13:
             raise ValidationError(
                 f'ISBN {self.isbn} is not valid: needs to be 13 characters long'
             )
+
+class Rental(models.Model):
+    _name = 'library.rental'
+    _description = 'Rentals'
+
+    name = fields.Char('Name', related='customer_id.name')
+    customer_id = fields.Many2one('res.partner', 'Customer', required=True)
+    book_ids = fields.One2many('library.book', 'rental_id', 'Books', readonly=True)
