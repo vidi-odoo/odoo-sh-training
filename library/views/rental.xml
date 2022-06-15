@@ -50,7 +50,9 @@
             <field name="name">library.rental.view.map</field>
             <field name="model">library.rental</field>
             <field name="arch" type="xml">
-                <map res_partner="customer_id" routing="false"/>
+                <map res_partner="customer_id" routing="false">
+                    <field name="book_ids" string="Books rented" />
+                </map>
             </field>
         </record>
 
