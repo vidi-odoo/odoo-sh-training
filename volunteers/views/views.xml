@@ -28,6 +28,8 @@
             <h1>
               <field name="name" />
             </h1>
+            <group><field name="state" /></group>
+            <group><field name="leader" /></group>
             <notebook>
               <page string="Info">
                 <group>
@@ -47,7 +49,6 @@
                 </group>
               </page>
             </notebook>
-            <group></group>
           </sheet>
         </form>
       </field>
@@ -63,6 +64,8 @@
           <field name="stop_time" />
           <field name="times_repeated" />
           <field name="frequency" />
+          <field name="state" />
+          <field name="leader" />
         </search>
       </field>
     </record>
@@ -77,64 +80,10 @@
           <field name="stop_time" />
           <field name="times_repeated" />
           <field name="frequency" />
+          <field name="state" />
+          <field name="leader" />
         </tree>
       </field>
     </record>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="volunteers.list">
-      <field name="name">volunteers list</field>
-      <field name="model">volunteers.volunteers</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
-
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="volunteers.action_window">
-      <field name="name">volunteers window</field>
-      <field name="res_model">volunteers.volunteers</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="volunteers.action_server">
-      <field name="name">volunteers server</field>
-      <field name="model_id" ref="model_volunteers_volunteers"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="volunteers" id="volunteers.menu_root"/>
--->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="volunteers.menu_1" parent="volunteers.menu_root"/>
-    <menuitem name="Menu 2" id="volunteers.menu_2" parent="volunteers.menu_root"/>
--->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="volunteers.menu_1_list" parent="volunteers.menu_1"
-              action="volunteers.action_window"/>
-    <menuitem name="Server to list" id="volunteers" parent="volunteers.menu_2"
-              action="volunteers.action_server"/>
--->
   </data>
 </odoo>

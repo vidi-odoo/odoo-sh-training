@@ -2,6 +2,7 @@
 # pyright: basic
 
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Book(models.Model):
     _name = 'library.book'
@@ -17,3 +18,9 @@ class Book(models.Model):
     notes = fields.Text('Notes')
     genre = fields.Char('Genre')
 
+    @api.onchange('isbn')
+    def _onchange_isbn(self):
+        if len(self.isbn) != 13:
+            raise ValidationError(
+                f'ISBN {self.isbn} is not valid: needs to be 13 characters long'
+            )

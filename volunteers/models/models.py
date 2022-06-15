@@ -20,3 +20,13 @@ class Task(models.Model):
         ('month', 'Month'),
         ('year', 'Year')
     ], 'Frequency')
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('ready', 'Ready')
+    ], 'State', default='draft')
+    leader = fields.Char('Leader')
+
+    @api.onchange('leader')
+    def _onchange_leader(self):
+        if self.leader:
+            self.state = 'ready'
