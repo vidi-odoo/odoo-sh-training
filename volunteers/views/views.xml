@@ -28,23 +28,17 @@
             <h1>
               <field name="name" />
             </h1>
-            <group><field name="state" /></group>
-            <group><field name="leader" /></group>
+            <group>
+              <field name="state" />
+              <field name="leader" />
+            </group>
             <notebook>
               <page string="Info">
                 <group>
                   <field name="start_time" />
-                </group>
-                <group>
                   <field name="stop_time" />
-                </group>
-                <group>
                   <field name="times_repeated" />
-                </group>
-                <group>
                   <field name="frequency" />
-                </group>
-                <group>
                   <field name="description" />
                 </group>
               </page>

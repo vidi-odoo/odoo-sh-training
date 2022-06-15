@@ -25,6 +25,7 @@ class Task(models.Model):
         ('ready', 'Ready')
     ], 'State', default='draft')
     leader = fields.Char('Leader')
+    volunteer_ids = fields.Many2many('res.partner', string='Volunteers')
 
     @api.onchange('leader')
     def _onchange_leader(self):

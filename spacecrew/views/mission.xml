@@ -17,8 +17,6 @@
                             <page string="Details">
                                 <group>
                                     <field name="launch_date" />
-                                </group>
-                                <group>
                                     <field name="return_date" />
                                 </group>
                             </page>

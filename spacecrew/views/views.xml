@@ -52,11 +52,7 @@
               <page string="Details">
                 <group>
                   <field name="manufacturer" />
-                </group>
-                <group>
                   <field name="width" />
-                </group>
-                <group>
                   <field name="height" />
                 </group>
               </page>
