@@ -46,5 +46,13 @@
             </field>
         </record>
 
+        <record id="library.rental_view_map" model="ir.ui.view">
+            <field name="name">library.rental.view.map</field>
+            <field name="model">library.rental</field>
+            <field name="arch" type="xml">
+                <map res_partner="customer_id" routing="false"/>
+            </field>
+        </record>
+
     </data>
 </odoo>
