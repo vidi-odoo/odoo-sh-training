@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="spacecrew.mission_view_form" model="ir.ui.view">
+            <field name="name">spacecrew.mission.view.form</field>
+            <field name="model">spacecrew.mission</field>
+            <field name="arch" type="xml">
+                <form string="Mission Form">
+                    <sheet>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                        <group>
+                            <field name="spaceship_id" />
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <group>
+                                    <field name="launch_date" />
+                                </group>
+                                <group>
+                                    <field name="return_date" />
+                                </group>
+                            </page>
+                            <page string="Crew Members">
+                                <field name="crew_ids" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="spacecrew.mission_view_tree" model="ir.ui.view">
+            <field name="name">spacecrew.mission.view.tree</field>
+            <field name="model">spacecrew.mission</field>
+            <field name="arch" type="xml">
+                <tree string="Missions">
+                    <field name="spaceship_id" />
+                    <field name="name" />
+                    <field name="launch_date" />
+                    <field name="return_date" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="spacecrew.mission_view_search" model="ir.ui.view">
+            <field name="name">spacecrew.mission.view.search</field>
+            <field name="model">spacecrew.mission</field>
+            <field name="arch" type="xml">
+                <search string="Search missions">
+                    <field name="spaceship_id" />
+                    <field name="name" />
+                    <field name="launch_date" />
+                    <field name="return_date" />
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,5 +1,5 @@
 <odoo>
-  <data noupdate='1'>
+  <data>
     <record model="spacecrew.spaceship" id="ship_01">
       <field name="name">Apollo 1</field>
       <field name="manufacturer">NASA</field>

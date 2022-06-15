@@ -26,9 +26,9 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/mission.xml',
         'security/spacecrew_security.xml',
         'security/ir.model.access.csv'
     ],
