@@ -3,7 +3,7 @@
     <record model="ir.actions.act_window" id="actions_spaceships">
       <field name="name">Spaceships</field>
       <field name="res_model">spacecrew.spaceship</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,search</field>
       <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">
           Add a spaceship
@@ -14,7 +14,7 @@
     <record model="ir.actions.act_window" id="actions_spacecrew_missions">
       <field name="name">Missions</field>
       <field name="res_model">spacecrew.mission</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,search,graph</field>
       <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">
           Add a mission

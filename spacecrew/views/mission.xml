@@ -18,6 +18,8 @@
                                 <group>
                                     <field name="launch_date" />
                                     <field name="return_date" />
+                                    <field name="engines" />
+                                    <field name="fuel_required" />
                                 </group>
                             </page>
                             <page string="Crew Members">
@@ -38,6 +40,8 @@
                     <field name="name" />
                     <field name="launch_date" />
                     <field name="return_date" />
+                    <field name="engines" />
+                    <field name="fuel_required" />
                 </tree>
             </field>
         </record>
@@ -52,6 +56,16 @@
                     <field name="launch_date" />
                     <field name="return_date" />
                 </search>
+            </field>
+        </record>
+
+        <record id="spacecrew.mission_view_graph" model="ir.ui.view">
+            <field name="name">spacecrew.mission.view.graph</field>
+            <field name="model">spacecrew.mission</field>
+            <field name="arch" type="xml">
+                <graph string="Mission Overview" type="bar">
+                    <field name="launch_date" />
+                </graph>
             </field>
         </record>
     </data>
