@@ -24,7 +24,7 @@ class Task(models.Model):
         ('draft', 'Draft'),
         ('ready', 'Ready')
     ], 'State', default='draft')
-    leader = fields.Char('Leader')
+    leader = fields.Many2one('res.partner', 'Leader')
     volunteer_ids = fields.Many2many('res.partner', string='Volunteers')
 
     @api.onchange('leader')
