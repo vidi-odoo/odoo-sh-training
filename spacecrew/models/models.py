@@ -51,7 +51,7 @@ class Mission(models.Model):
                              required=True,
                              default=1)
     
-    project_id = fields.One2many('project.project', 'mission_ids', 'Projects')
+    project_ids = fields.One2many('project.project', 'mission_id', 'Projects')
 
     @api.depends('launch_date', 'return_date', 'engines')
     def _compute_fuel_required(self):

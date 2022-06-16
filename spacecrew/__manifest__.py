@@ -30,6 +30,7 @@
         'views/templates.xml',
         'views/mission.xml',
         'views/project.xml',
+        'wizard/views.xml',
         'security/spacecrew_security.xml',
         'security/ir.model.access.csv'
     ],

@@ -7,8 +7,8 @@
             <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
-                   <page name="mission" string="Mission" attrs="{'invisible':[('mission_ids','=',False)]}">
-                        <field name="mission_ids"/>
+                   <page name="mission" string="Mission" attrs="{'invisible':[('mission_id','=',False)]}">
+                        <field name="mission_id"/>
                    </page> 
                 </xpath>
             </field>
