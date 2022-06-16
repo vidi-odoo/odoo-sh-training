@@ -25,6 +25,9 @@
                             <page string="Crew Members">
                                 <field name="crew_ids" />
                             </page>
+                            <page name="projects" string="Projects">
+                                <field name="project_id" create='false'/>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>

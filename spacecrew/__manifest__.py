@@ -22,13 +22,14 @@
     'application': True,
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['project'],
 
     # always loaded
     'data': [
         'views/views.xml',
         'views/templates.xml',
         'views/mission.xml',
+        'views/project.xml',
         'security/spacecrew_security.xml',
         'security/ir.model.access.csv'
     ],
