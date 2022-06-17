@@ -31,6 +31,7 @@
         'views/mission.xml',
         'views/project.xml',
         'wizard/views.xml',
+        'report/report.xml',
         'security/spacecrew_security.xml',
         'security/ir.model.access.csv'
     ],

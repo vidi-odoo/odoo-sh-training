@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="reports_spaceships" model="ir.actions.report">
+            <field name="name">Spaceship Report</field>
+            <field name="model">spacecrew.spaceship</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">spacecrew.report_spaceship_template</field>
+            <field name="binding_model_id" ref="model_spacecrew_spaceship" />
+            <field name="binding_type">report</field>
+        </record>
+
+        <template id="report_spaceship_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>Spaceships Report</h1>
+                        <div class="row">
+                            <div class="col-auto" t-if="docs[0].name">
+                                <strong>Name</strong>
+                                <span t-field="docs[0].name" />
+                            </div>
+                            <div class="col-auto" t-if="docs[0].manufacturer">
+                                <strong>Manufacturer</strong>
+                                <span t-field="docs[0].manufacturer" />
+                            </div>
+                            <div class="col-auto" t-if="docs[0].width">
+                                <strong>Width</strong>
+                                <span t-field="docs[0].width" />
+                            </div>
+                            <div class="col-auto" t-if="docs[0].height">
+                                <strong>Height</strong>
+                                <span t-field="docs[0].height" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <strong>Missions</strong>
+                            <t t-foreach="docs[0].mission_ids" t-as="mission">
+                                <span t-field="mission.launch_date" />
+                            </t>
+                        </div>
+                        <hr />
+                        <h2>Previous missions</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th name="th_name">Name</th>
+                                    <th name="th_manufacturer">Manufacturer</th>
+                                    <th name="th_width">Width</th>
+                                    <th name="th_height">Height</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="docs" t-as="o">
+                                    <tr>
+                                        <td>
+                                            <span t-field="o.name" t-if="o.name" />
+                                        </td>
+                                        <td>
+                                            <span t-field="o.manufacturer" t-if="o.manufacturer" />
+                                        </td>
+                                        <td>
+                                            <span t-field="o.width" t-if="o.width" />
+                                        </td>
+                                        <td>
+                                            <span t-field="o.height" t-if="o.height" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
