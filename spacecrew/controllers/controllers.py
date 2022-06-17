@@ -1,21 +1,14 @@
 # -*- coding: utf-8 -*-
 # from odoo import http
+from odoo.http import Controller, route, request
 
-
-# class Spacecrew(http.Controller):
-#     @http.route('/spacecrew/spacecrew', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
-
-#     @http.route('/spacecrew/spacecrew/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('spacecrew.listing', {
-#             'root': '/spacecrew/spacecrew',
-#             'objects': http.request.env['spacecrew.spacecrew'].search([]),
-#         })
-
-#     @http.route('/spacecrew/spacecrew/objects/<model("spacecrew.spacecrew"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('spacecrew.object', {
-#             'object': obj
-#         })
+class MissionController(Controller):
+    @route('/spacecrew', auth='public', website=True)
+    def index(self):
+        return 'Hello, space cadets!'
+    
+    @route('/spacecrew/missions', auth='public', website=True)
+    def list(self):
+        return request.render('spacecrew.mission_listing', {
+            'missions': request.env['spacecrew.mission'].search([])
+        })

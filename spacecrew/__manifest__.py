@@ -22,7 +22,7 @@
     'application': True,
 
     # any module necessary for this one to work correctly
-    'depends': ['project'],
+    'depends': ['project', 'website'],
 
     # always loaded
     'data': [
@@ -30,6 +30,7 @@
         'views/templates.xml',
         'views/mission.xml',
         'views/project.xml',
+        'views/website.xml',
         'wizard/views.xml',
         'report/report.xml',
         'security/spacecrew_security.xml',
